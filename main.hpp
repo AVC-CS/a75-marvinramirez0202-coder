@@ -12,6 +12,16 @@ int finduserstring(char[], int, char[], int);
 int finduserstring(char cstr[], int cstrlen, char userstr[], int userlen)
 {
     // TODO: scan cstr for the first occurrence of userstr, return its starting
+    int i, j;
+    for(i = 0; i<= cstrlen - userlen;i++){
+        for(j = 0; j < userlen; j++){
+            if(cstr[i + j] != userstr[j])
+                break;
+        }
+        if(j == userlen)
+            return i;
+    }
+    return -1;
 }
 
 #endif
